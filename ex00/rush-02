@@ -1,0 +1,21 @@
+#include <unistd.h>
+#include <string.h>
+
+int main(void)
+{
+    char    *digits[] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+    char    *numbers[] = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+    char    *multiples[] = {"ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+    char    *powers[] = {"ten", "hundred", "thousand", "ten thousand", "hundred thousand", "million"};
+    int number;
+    int a;
+    int b;
+
+    while (number > 20)
+    {
+        a = number % 10;
+        b = number / 10;
+    }
+
+    return (0);
+}
