@@ -2,46 +2,34 @@
 
 void    ft_putnbr(int nb);
 
-void	ft_putchar(char c)
+void	ft_putnbr(int nb)
 {
-	write (1, &c, 1);
-}
+	char	digit;
 
-void    ft_putnbr(int nb)
-{
-    int w;
-    int x;
-	int y;
-	int z;
-
-	x = 0;
-	while (x <= 7)
+	if (nb < 0)
 	{
-		y = x + 1;
-		while (y <= 8)
+		write(1, "-", 1);
+		if (nb == -2147483648)
 		{
-			z = y + 1;
-			while (z <= 9)
-			{
-				ft_putchar(x + '0');
-				ft_putchar(y + '0');
-				ft_putchar(z + '0');
-				if (!(x == 7 && y == 8 && z == 9))
-                {
-                    ft_putchar(',');
-                    ft_putchar(' ');
-                }
-				z++;
-			}
-			y++;
+			write(1, "2147483648", 10);
+			return ;
 		}
-		x++;
+		nb = -nb;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+	{
+		digit = nb + '0';
+		write(1, &digit, 1);
 	}
 }
 
 int	main(void)
 {
-	ft_print_comb();
-    ft_putchar('\n');
+	ft_putnbr(42);
 	return (0);
 }
